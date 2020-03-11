@@ -5,7 +5,7 @@ const uglify = require('gulp-uglify')
 const imagemin = require('gulp-imagemin')
 
 // 压缩html
-gulp.task('minify-html', function () {
+gulp.task('minify-html', () => {
   return gulp.src(['./public/**/*.html'])
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -17,36 +17,30 @@ gulp.task('minify-html', function () {
 })
 
 // 压缩css
-gulp.task('minify-css', function () {
+gulp.task('minify-css', () => {
   return gulp.src(['./public/css/**/*.css'])
     .pipe(cleanCSS())
     .pipe(gulp.dest('./public/css'))
 })
 
 // 压缩js
-gulp.task('minify-js', function () {
+gulp.task('minify-js', () => {
   return gulp.src(['./public/js/**/*.js'])
     .pipe(uglify())
     .pipe(gulp.dest('./public/js'))
 })
 
 // 压缩图片
-gulp.task('minify-images', function () {
+gulp.task('minify-images', () => {
   return gulp.src(['./public/**/*.png', './public/**/*.jpg', './public/**/*.gif', './public/**/*.svg'])
-    .pipe(imagemin([
-        imagemin.svgo(),
-        imagemin.gifsicle({ 'optimizationLevel': 3 }),
-        imagemin.jpegtran({ 'progressive': true }),
-        imagemin.optipng({ 'optimizationLevel': 7 })
-      ], { 'verbose': true }
-    ))
+    .pipe(imagemin([imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()], { verbose: true }))
     .pipe(gulp.dest('./public'))
 })
 
 // 默认任务
-gulp.task('default', [
+gulp.task('default', gulp.parallel(
   'minify-html',
   'minify-css',
   'minify-js',
   'minify-images'
-])
+))
