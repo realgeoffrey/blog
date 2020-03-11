@@ -5,7 +5,7 @@ const uglify = require('gulp-uglify')
 const imagemin = require('gulp-imagemin')
 
 // 压缩html
-gulp.task('minify-html', () => {
+gulp.task('minify-html', async () => {
   return gulp.src(['./public/**/*.html'])
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -17,21 +17,21 @@ gulp.task('minify-html', () => {
 })
 
 // 压缩css
-gulp.task('minify-css', () => {
+gulp.task('minify-css', async () => {
   return gulp.src(['./public/css/**/*.css'])
     .pipe(cleanCSS())
     .pipe(gulp.dest('./public/css'))
 })
 
 // 压缩js
-gulp.task('minify-js', () => {
+gulp.task('minify-js', async () => {
   return gulp.src(['./public/js/**/*.js'])
     .pipe(uglify())
     .pipe(gulp.dest('./public/js'))
 })
 
 // 压缩图片
-gulp.task('minify-images', () => {
+gulp.task('minify-images', async () => {
   return gulp.src(['./public/**/*.png', './public/**/*.jpg', './public/**/*.gif', './public/**/*.svg'])
     .pipe(imagemin([imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()], { verbose: true }))
     .pipe(gulp.dest('./public'))
