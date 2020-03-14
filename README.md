@@ -1,5 +1,5 @@
 # blog
-Powered by [Hexo](https://github.com/hexojs/hexo) + [next](https://github.com/theme-next/hexo-theme-next), hosted by GitHub Pages.
+Powered by [Hexo](https://github.com/hexojs/hexo) + [NexT](https://github.com/theme-next/hexo-theme-next), hosted by GitHub Pages.
 
 My blog address: <https://realgeoffrey.github.io/blog/>
 
@@ -58,8 +58,11 @@ My blog address: <https://realgeoffrey.github.io/blog/>
 1. 保留文章资源和配置
 
     1. 文章资源：`source/`下的所有文件
+
+        >`scaffolds/`下是新建文件的模板
     2. 配置（Hexo和themes）：`_config.yml`
-    3. 其他在主题代码中的改动
+    3. 一些构建文件，如：`package.json`、`gulpfile.js`
+    4. 其他在主题代码中的改动
 2. 新建博客配置：
 
     ```shell
@@ -78,3 +81,5 @@ My blog address: <https://realgeoffrey.github.io/blog/>
 
     # 6. 按照Hexo的命令进行发布
     ```
+
+>配置文档地址：[Hexo配置](https://hexo.io/zh-cn/docs/)、[NexT配置](https://theme-next.org/docs/)。
