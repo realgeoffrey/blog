@@ -13,23 +13,25 @@ My blog address: <https://realgeoffrey.github.io/blog/>
 
 1. 新建一篇（发布/草稿）文章
 
-    ```bash
+    ```shell
     hexo new [layout] <title>
     ```
     ><details>
     ><summary><code>[layout]</code>可以选择<code>scaffolds</code>文件夹下的多种模式</summary>
     >
-    >1. `post`：发布
+    >1. `post`：（默认）发布
     >2. `draft`：草稿，不会发布。（需要用命令`hexo publish <filename>`把`_drafts`移动到`_posts`）
     ></details>
 2. 启动本地开发服务器
 
-    ```bash
+    ```shell
     hexo server # 或：hexo s
     ```
+
+    >增加`-p 数字`可以指定端口号。
 3. 发布（生成静态文件、并且部署网站）
 
-    ```bash
+    ```shell
     hexo g -d   # 或：hexo d -g
 
     # 可能需要输入github的账户名、密码
@@ -37,9 +39,15 @@ My blog address: <https://realgeoffrey.github.io/blog/>
     ```
 4. 清理缓存（发布前后或本地服务器看不到更新内容时）
 
-   ```bash
+   ```shell
    hexo clean
    ```
+5. 列出网站列表信息
+
+    ```shell
+    hexo list <type>
+    ```
+    >`<type>`必选以下之一：`page`、`post`、`route`、`tag`、`category`。
 
 ### 配置
 1. Hexo总体配置：`_config.yml`
@@ -54,9 +62,9 @@ My blog address: <https://realgeoffrey.github.io/blog/>
     3. 其他在主题代码中的改动
 2. 新建博客配置：
 
-    ```bash
+    ```shell
     # 1. 新建Hexo配置
-    hexo init blog
+    hexo init [folder]
 
     # 2. 进入文件夹
     cd blog
