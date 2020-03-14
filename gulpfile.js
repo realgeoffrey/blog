@@ -1,7 +1,7 @@
 const gulp = require('gulp')
 const htmlmin = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
-const uglify = require('gulp-uglify')
+const terser = require('gulp-terser')
 const imagemin = require('gulp-imagemin')
 
 // 压缩html
@@ -26,7 +26,7 @@ gulp.task('minify-css', async () => {
 // 压缩js
 gulp.task('minify-js', async () => {
   return gulp.src(['./public/js/**/*.js'])
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(gulp.dest('./public/js'))
 })
 
