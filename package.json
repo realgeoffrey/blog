@@ -6,6 +6,7 @@
     "version": "4.2.0"
   },
   "scripts": {
+    "server": "hexo clean && hexo server",
     "publish": "hexo clean && hexo g && npm run gulp && hexo d && hexo clean",
     "gulp": "gulp"
   },
