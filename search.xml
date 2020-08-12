@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test2</title>
-    <url>/blog/2020/03/test2/</url>
-    <content><![CDATA[<p>测试2 show</p>
-<a id="more"></a>
-<p>测试2 hide</p>
-]]></content>
-  </entry>
-  <entry>
     <title>测试的发布1</title>
     <url>/blog/2018/05/%E6%B5%8B%E8%AF%95%E5%8F%91%E5%B8%831/</url>
     <content><![CDATA[<h3 id="测试的标题"><a href="#测试的标题" class="headerlink" title="测试的标题"></a>测试的标题</h3><ol>
@@ -31,5 +23,13 @@
         <category>试用类别2</category>
         <category>试用类别3</category>
       </categories>
+  </entry>
+  <entry>
+    <title>test2</title>
+    <url>/blog/2020/03/test2/</url>
+    <content><![CDATA[<p>测试2 show</p>
+<a id="more"></a>
+<p>测试2 hide</p>
+]]></content>
   </entry>
 </search>
