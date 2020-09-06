@@ -28,7 +28,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:  # holdem/*
+skip_render: holdem/*
 
 # 文章
 new_post_name: :year-:month-:title.md # 新文章的文件名称
