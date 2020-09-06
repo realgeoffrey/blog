@@ -33,7 +33,7 @@ let chartdata: outputDataType = [];
       ],
     },
     ruanyujing: {
-      nickname: "静静",
+      nickname: "晶晶",
       data: [
         {
           time: "2020/08/16",
@@ -59,7 +59,7 @@ let chartdata: outputDataType = [];
       ],
     },
     dongchencheng: {
-      nickname: "晨程",
+      nickname: "cc",
       data: [
         {
           time: "2020/09/06",
@@ -68,7 +68,7 @@ let chartdata: outputDataType = [];
       ],
     },
     yousiyao: {
-      nickname: "斯尧",
+      nickname: "siyao",
       data: [
         {
           time: "2020/08/16",
@@ -98,7 +98,7 @@ let chartdata: outputDataType = [];
       ],
     },
     linyanzhi: {
-      nickname: "彦志",
+      nickname: "yanzhi",
       data: [
         {
           time: "2020/08/16",
@@ -120,7 +120,7 @@ let chartdata: outputDataType = [];
       ],
     },
     chenkangyi: {
-      nickname: "康怡",
+      nickname: "Jerry",
       data: [
         {
           time: "2020/08/22",
@@ -170,7 +170,7 @@ let chartdata: outputDataType = [];
       ],
     },
     weisiyu: {
-      nickname: "思禹",
+      nickname: "siyu",
       data: [
         {
           time: "2020/08/16",
