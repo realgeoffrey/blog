@@ -33,7 +33,7 @@ var chartdata = [];
             ],
         },
         ruanyujing: {
-            nickname: "晶晶",
+            nickname: "ECHO🐰",
             data: [
                 {
                     time: "2020/08/16",
