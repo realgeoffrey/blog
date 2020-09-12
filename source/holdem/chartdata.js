@@ -93,7 +93,7 @@ var chartdata = [];
                 },
                 {
                     time: "2020/09/06",
-                    value: -415,
+                    value: -405,
                 },
             ],
         },
@@ -106,7 +106,7 @@ var chartdata = [];
                 },
                 {
                     time: "2020/09/06",
-                    value: 374,
+                    value: 364,
                 },
             ],
         },
