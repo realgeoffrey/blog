@@ -6,7 +6,8 @@ type outputDataType = {
 }[];
 
 let originChartdata: outputDataType = [];
-let chartdata: outputDataType = [];
+let chartdata1: outputDataType = [];
+let chartdata2: outputDataType = [];
 (function () {
   // 原始数据
   const rawData: {
@@ -30,6 +31,10 @@ let chartdata: outputDataType = [];
           time: "2020/09/06",
           value: -322,
         },
+        {
+          time: "2020/09/13",
+          value: 130,
+        },
       ],
     },
     ruanyujing: {
@@ -47,6 +52,10 @@ let chartdata: outputDataType = [];
           time: "2020/09/06",
           value: -656,
         },
+        {
+          time: "2020/09/13",
+          value: 37,
+        },
       ],
     },
     caofangning: {
@@ -55,6 +64,10 @@ let chartdata: outputDataType = [];
         {
           time: "2020/08/16",
           value: 362,
+        },
+        {
+          time: "2020/09/13",
+          value: 52,
         },
       ],
     },
@@ -133,6 +146,52 @@ let chartdata: outputDataType = [];
       ],
     },
 
+    qilin: {
+      nickname: "70",
+      data: [
+        {
+          time: "2020/09/13",
+          value: -122,
+        },
+      ],
+    },
+    liucheng: {
+      nickname: "成哥",
+      data: [
+        {
+          time: "2020/09/13",
+          value: -147,
+        },
+      ],
+    },
+    maoyong: {
+      nickname: "charles",
+      data: [
+        {
+          time: "2020/09/13",
+          value: 164,
+        },
+      ],
+    },
+    wangwei: {
+      nickname: "老王",
+      data: [
+        {
+          time: "2020/09/13",
+          value: -144,
+        },
+      ],
+    },
+    tie: {
+      nickname: "铁同学",
+      data: [
+        {
+          time: "2020/08/16",
+          value: 251,
+        },
+      ],
+    },
+
     weichangjiang: {
       nickname: "长江",
       data: [
@@ -157,15 +216,6 @@ let chartdata: outputDataType = [];
         {
           time: "2020/08/22",
           value: -137,
-        },
-      ],
-    },
-    tie: {
-      nickname: "铁同学",
-      data: [
-        {
-          time: "2020/08/16",
-          value: 251,
         },
       ],
     },
@@ -200,24 +250,42 @@ let chartdata: outputDataType = [];
     });
   });
 
-  // 要展示的id
-  const filteredId: Array<number | string> = [
+  // 数组去重
+  function uniqueArr(arr: string[]): string[] {
+    return Array.from(new Set(arr));
+    // 或：return [...new Set(arr)];
+  }
+
+  // 要展示的id：✈️🐔的朋友
+  const filteredId1: Array<number | string> = uniqueArr([
     "zhengfeijie",
     "ruanyujing",
-    "caofangning",
     "dongchencheng",
     "yousiyao",
     "zhaohaibo",
     "linyanzhi",
     "chenqiaojun",
     "chenkangyi",
-  ];
+  ]);
+  // 要展示的id2：经理的朋友
+  const filteredId2: Array<number | string> = uniqueArr([
+    "zhengfeijie",
+    "ruanyujing",
+    "caofangning",
+    "liucheng",
+    "qilin",
+    "maoyong",
+    "wangwei",
+  ]);
 
   originChartdata = outputData;
 
-  chartdata = outputData.filter((data) => {
-    return filteredId.includes(data.id);
+  chartdata1 = outputData.filter((data) => {
+    return filteredId1.includes(data.id);
+  });
+  chartdata2 = outputData.filter((data) => {
+    return filteredId2.includes(data.id);
   });
 })();
 
-console.log(originChartdata, chartdata);
+console.log(originChartdata, chartdata1, chartdata2);

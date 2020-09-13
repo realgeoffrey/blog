@@ -11,7 +11,8 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 var originChartdata = [];
-var chartdata = [];
+var chartdata1 = [];
+var chartdata2 = [];
 (function () {
     // 原始数据
     var rawData = {
@@ -30,6 +31,10 @@ var chartdata = [];
                     time: "2020/09/06",
                     value: -322,
                 },
+                {
+                    time: "2020/09/13",
+                    value: 130,
+                },
             ],
         },
         ruanyujing: {
@@ -47,6 +52,10 @@ var chartdata = [];
                     time: "2020/09/06",
                     value: -656,
                 },
+                {
+                    time: "2020/09/13",
+                    value: 37,
+                },
             ],
         },
         caofangning: {
@@ -55,6 +64,10 @@ var chartdata = [];
                 {
                     time: "2020/08/16",
                     value: 362,
+                },
+                {
+                    time: "2020/09/13",
+                    value: 52,
                 },
             ],
         },
@@ -132,6 +145,51 @@ var chartdata = [];
                 },
             ],
         },
+        qilin: {
+            nickname: "70",
+            data: [
+                {
+                    time: "2020/09/13",
+                    value: -122,
+                },
+            ],
+        },
+        liucheng: {
+            nickname: "成哥",
+            data: [
+                {
+                    time: "2020/09/13",
+                    value: -147,
+                },
+            ],
+        },
+        maoyong: {
+            nickname: "charles",
+            data: [
+                {
+                    time: "2020/09/13",
+                    value: 164,
+                },
+            ],
+        },
+        wangwei: {
+            nickname: "老王",
+            data: [
+                {
+                    time: "2020/09/13",
+                    value: -144,
+                },
+            ],
+        },
+        tie: {
+            nickname: "铁同学",
+            data: [
+                {
+                    time: "2020/08/16",
+                    value: 251,
+                },
+            ],
+        },
         weichangjiang: {
             nickname: "长江",
             data: [
@@ -156,15 +214,6 @@ var chartdata = [];
                 {
                     time: "2020/08/22",
                     value: -137,
-                },
-            ],
-        },
-        tie: {
-            nickname: "铁同学",
-            data: [
-                {
-                    time: "2020/08/16",
-                    value: 251,
                 },
             ],
         },
@@ -194,21 +243,38 @@ var chartdata = [];
             outputData.push(__assign({ id: name, nickname: (detail.nickname || name) + "(" + detail.data.length + ")" }, timeAndValue));
         });
     });
-    // 要展示的id
-    var filteredId = [
+    // 数组去重
+    function uniqueArr(arr) {
+        return Array.from(new Set(arr));
+        // 或：return [...new Set(arr)];
+    }
+    // 要展示的id：✈️🐔的朋友
+    var filteredId1 = uniqueArr([
         "zhengfeijie",
         "ruanyujing",
-        "caofangning",
         "dongchencheng",
         "yousiyao",
         "zhaohaibo",
         "linyanzhi",
         "chenqiaojun",
         "chenkangyi",
-    ];
+    ]);
+    // 要展示的id2：经理的朋友
+    var filteredId2 = uniqueArr([
+        "zhengfeijie",
+        "ruanyujing",
+        "caofangning",
+        "liucheng",
+        "qilin",
+        "maoyong",
+        "wangwei",
+    ]);
     originChartdata = outputData;
-    chartdata = outputData.filter(function (data) {
-        return filteredId.includes(data.id);
+    chartdata1 = outputData.filter(function (data) {
+        return filteredId1.includes(data.id);
+    });
+    chartdata2 = outputData.filter(function (data) {
+        return filteredId2.includes(data.id);
     });
 })();
-console.log(originChartdata, chartdata);
+console.log(originChartdata, chartdata1, chartdata2);

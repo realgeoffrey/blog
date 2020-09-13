@@ -26,8 +26,10 @@
 <body>
   <h1>德州战绩！</h1>
   <div id="root1"></div>
-  <hr>
+  <br>
   <div id="root2"></div>
+  <hr>
+  <div id="root3"></div>
   <br>
 
   <script crossorigin src="//cdn.jsdelivr.net/npm/react@16/umd/react.production.min.js"></script>
@@ -52,7 +54,7 @@
           type: "timeCat"
         }
       }}
-      data={chartdata}
+      data={chartdata1}
     >
       <Line shape="smooth" position="time*value" color="nickname" label="value" />
       <Point position="time*value" color="nickname" label="value" />
@@ -61,10 +63,34 @@
     </Chart>
   ), document.getElementById("root1"));
   </script>
+  <script type="text/babel">
+  ReactDOM.render((
+    <Chart
+      padding="auto"
+      appendPadding={[35, 15, 0, 5]}
+      height={450}
+      animate
+      autoFit
+      scale={{
+        "time": {
+          type: "timeCat"
+        }
+      }}
+      data={chartdata2}
+    >
+      <Line shape="smooth" position="time*value" color="nickname" label="value" />
+      <Point position="time*value" color="nickname" label="value" />
+      <Area shape="smooth" position="time*value" color="nickname" label="value" />
+      {/*<Slider />*/}
+    </Chart>
+  ), document.getElementById("root2"));
+  </script>
 
   <script>
   const sumArray = {};
-  chartdata.filter((data) => {
+  Array.from(new Set( // 数组去重
+    chartdata1.concat(chartdata2)
+  )).filter((data) => {
     if (sumArray[data.id]) {
       sumArray[data.id].sum += data.value;
       sumArray[data.id].process = `${sumArray[data.id].process}${data.value >= 0 ? `+${data.value}` : data.value}`;
@@ -87,7 +113,7 @@
         <th>总分</th>
       </tr>
 
-      {Object.values(sumArray).sort((a,b)=>b.sum-a.sum).map((data) => {
+      {Object.values(sumArray).sort((a, b) => b.sum - a.sum).map((data) => {
         return (
           <tr>
             <td>{data.nickname}</td>
@@ -96,7 +122,7 @@
         );
       })}
     </table>
-  ), document.getElementById("root2"));
+  ), document.getElementById("root3"));
   </script>
 
 </body>
